@@ -1,0 +1,44 @@
+Crossword Puzzle Generator
+
+Given a pattern and a word list, this program will try to generate a
+crossword puzzle. It uses brute-force search tempered with a little
+cleverness. It does not generate clues.
+
+To compile, type make.
+
+To run it, you need a word list. /usr/dict/words will almost certainly
+not work because it does not have enough words. Get a word list with
+inflected forms (past tenses, plurals, &c), for instance:
+
+  ftp://ftp.cs.cornell.edu/pub/turney/OSPD.shar.Z
+
+With your word list in the file word-file, type
+
+  ./cword pattern1 word-file
+
+On an 80-mips workstation, using the OSPD word list, cword can generate
+a crossword puzzle from pattern1 in under 20 seconds.
+
+You can make your own patterns. cword won't be able to generate puzzles
+much larger than the standard 15x15, and will have a hard time if there
+are unusually large number of up/down intersections. For instance, it
+can generate 5x5 solid blocks of words, but it takes a long time to
+make a 6x6 block.
+
+cword will try to finish generating a puzzle that already has a few
+words filled in. Just put the letters into the pattern. It will
+have trouble if you specify more than a couple of words.
+
+There are a lot of other word lists that might work well; look at
+
+  http://www.cis.ohio-state.edu/hypertext/faq/usenet/crossword-faq/top.html
+
+You can fetch this software from
+
+  http://www.pdos.lcs.mit.edu/~rtm/cword.tar
+  http://www.pdos.lcs.mit.edu/~rtm/cword-src/
+
+Greg Kuperberg and David Hendler helped me with this software.
+
+Robert Morris
+rtm@eecs.harvard.edu
